@@ -1,11 +1,4 @@
-// ============================================
-// LIBRARY MANAGEMENT SYSTEM
-// ============================================
 
-
-// ============================================
-// INITIAL BOOK DATA
-// ============================================
 
 const defaultBooks = [
     {
@@ -50,18 +43,14 @@ const defaultBooks = [
 ];
 
 
-// ============================================
-// LOAD BOOKS FROM LOCAL STORAGE
-// ============================================
+
 
 let books =
     JSON.parse(localStorage.getItem("libraryBooks"))
     || defaultBooks;
 
 
-// ============================================
-// DOM ELEMENTS
-// ============================================
+
 
 const bookTableBody =
     document.getElementById("bookTableBody");
@@ -91,9 +80,7 @@ const memberName =
     document.getElementById("memberName");
 
 
-// ============================================
-// SAVE BOOKS
-// ============================================
+
 
 function saveBooks() {
 
@@ -105,9 +92,6 @@ function saveBooks() {
 }
 
 
-// ============================================
-// DISPLAY BOOKS
-// ============================================
 
 function displayBooks(bookList = books) {
 
@@ -219,9 +203,6 @@ function displayBooks(bookList = books) {
 }
 
 
-// ============================================
-// UPDATE STATISTICS
-// ============================================
 
 function updateStatistics() {
 
@@ -262,9 +243,7 @@ function updateStatistics() {
 }
 
 
-// ============================================
-// ADD BOOK
-// ============================================
+
 
 bookForm.addEventListener("submit", function(event) {
 
@@ -361,9 +340,7 @@ bookForm.addEventListener("submit", function(event) {
 });
 
 
-// ============================================
-// SEARCH BOOKS
-// ============================================
+
 
 searchInput.addEventListener("input", function() {
 
@@ -405,9 +382,7 @@ searchInput.addEventListener("input", function() {
 });
 
 
-// ============================================
-// OPEN ISSUE MODAL
-// ============================================
+
 
 function openIssueModal(id) {
 
@@ -440,9 +415,6 @@ function openIssueModal(id) {
 }
 
 
-// ============================================
-// CLOSE MODAL
-// ============================================
 
 closeModal.addEventListener("click", function() {
 
@@ -462,9 +434,7 @@ window.addEventListener("click", function(event) {
 });
 
 
-// ============================================
-// ISSUE BOOK
-// ============================================
+
 
 issueForm.addEventListener("submit", function(event) {
 
@@ -522,9 +492,6 @@ issueForm.addEventListener("submit", function(event) {
 });
 
 
-// ============================================
-// RETURN BOOK
-// ============================================
 
 function returnBook(id) {
 
@@ -565,9 +532,6 @@ function returnBook(id) {
 }
 
 
-// ============================================
-// DELETE BOOK
-// ============================================
 
 function deleteBook(id) {
 
@@ -607,11 +571,6 @@ function deleteBook(id) {
 }
 
 
-// ============================================
-// SECURITY HELPER
-// Prevent HTML injection when displaying
-// user-entered text.
-// ============================================
 
 function escapeHTML(value) {
 
@@ -625,17 +584,12 @@ function escapeHTML(value) {
 }
 
 
-// ============================================
-// CURRENT YEAR
-// ============================================
+
 
 document.getElementById("currentYear")
     .textContent = new Date().getFullYear();
 
 
-// ============================================
-// INITIAL LOAD
-// ============================================
 
 displayBooks();
 
